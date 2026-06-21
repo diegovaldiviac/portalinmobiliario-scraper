@@ -11,12 +11,11 @@ def initialize_already_seen_file(urls):
         urls (dict): Dictionary with keys to initialize in the JSON file
     """
     try:
-        # Try to read the existing file
         with open("already_seen.json", "r", encoding="utf8") as json_file:
             already_seen = json.load(json_file)
-
+        if not isinstance(already_seen, dict):
+            already_seen = {}
     except (FileNotFoundError, json.JSONDecodeError):
-        # If file doesn't exist or is invalid, start with empty dict
         already_seen = {}
 
     # Add any missing keys with empty lists
