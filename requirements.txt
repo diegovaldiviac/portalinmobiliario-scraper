@@ -18,6 +18,8 @@ python-dateutil==2.8.2
     # via python-crontab
 python-dotenv==0.19.2
     # via -r requirements.in
+twilio
+    # via -r requirements.in
 requests==2.27.1
     # via -r requirements.in
 six==1.16.0
